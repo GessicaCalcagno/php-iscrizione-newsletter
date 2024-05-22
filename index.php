@@ -1,3 +1,17 @@
+<?php
+if (isset($_POST["email"])) { // se questa key esiste facciamo la richiesta
+    $user_email = $_POST["email"];
+    // var_dump($user_email);
+
+    // controllo se nell'email sono presenti . @
+    if (str_contains($user_email, "@") && str_contains($user_email, ".")) {
+        $ok_email = "Email valida";
+    } else {
+        $error = "Error, non hai inserito i dati correttamente";
+    };
+};
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,20 +25,33 @@
 
 <body>
     <div class="container">
-    <h1 class="mt-4 mb-4">Iscriviti alla Newsletter</h1>
+        <h1 class="mt-4 mb-4">Iscriviti alla Newsletter</h1>
 
-     <!-- FORM -->
-     <form action="index.php" method="POST" class="mb-4">
+        <!-- STAMP ALERT -->
+        <?php if (isset($ok_email)) { ?>
+            <div class="alert alert-success">
+                <?php echo $ok_email; ?>
+            </div>
+        <?php } ?>
+
+        <?php if (isset($error)) { ?>
+            <div class="alert alert-danger">
+                <?php echo $error; ?>
+            </div>
+        <?php } ?>
+        <!-- /STAMP ALERT -->
+
+
+        <!-- FORM -->
+        <form action="index.php" method="POST" class="mb-4">
             <div class="form-group">
                 <label for="email">Indirizzo Email</label>
-                <input type="email" name="email" id="email" class="form-control">
-
-                <div class="invalid-feedback">
-                    
-                </div>
+                <input name="email" id="email" class="form-control">
+                <!-- Se inserisco type="email" mi inserisce di defaul dei controlli del browser -->
             </div>
             <button type="submit" class="btn btn-primary mt-3">Iscriviti</button>
         </form>
+        <!-- /FORM -->
 
     </div>
 
