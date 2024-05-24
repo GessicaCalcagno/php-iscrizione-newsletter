@@ -1,5 +1,11 @@
-<?php
-include __DIR__ . "/partials/functions.php";
+<?php 
+
+if (isset($_SESSION)) {
+    session_start();
+}
+
+require_once __DIR__ . "/partials/functions.php";
+  
 ?>
 
 <!DOCTYPE html>

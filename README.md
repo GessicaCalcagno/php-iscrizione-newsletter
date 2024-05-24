@@ -15,3 +15,11 @@ Rifattorizzare il codice in modo che la logica di controllo dell'email sia conte
 - Milestone 3: (Stile dell'alert)
 Modificare la classe dell'alert in base all'esito della funzione di validazione.
 Utilizzare la classe alert-success per indicare un esito positivo e alert-danger per un esito negativo
+
+### BONUS:
+- Milestone 4: (Redirect)
+Implementare un redirect a una pagina di ringraziamento (thankyou.php) in caso di esito positivo.
+Utilizzare la session PHP per memorizzare l'indirizzo email registrato durante la procedura di validazione.
+- Milestone 5: (Visualizzare valore errato)
+Nel caso di esito negativo, garantire che il valore inserito precedentemente nel campo di input rimanga visibile.
+Sfruttare le variabili GET per mantenere e visualizzare l'indirizzo email errato nell'input.
